@@ -6,19 +6,20 @@ import java.util.Random;
 public class Smartphone extends Prodotto {
 
   private String IMEI;
-  private int memoria;
+  private int memoriaMB;
 
   Smartphone(
     String nome,
     String marca,
     BigDecimal prezzo,
     String IMEI,
-    int memoria
+    int memoriaMB
   ) {
     super(nome, marca, prezzo, false);
-    IMEIvalidator(IMEI);
+    //
+    this.IMEI = IMEIvalidator(IMEI);
 
-    this.memoria = memoria;
+    this.memoriaMB = memoriaMB;
   }
 
   // * GETTERS
@@ -27,8 +28,8 @@ public class Smartphone extends Prodotto {
     return this.IMEI;
   }
 
-  public int getMemoria() {
-    return this.memoria;
+  public int getMemoriaMB() {
+    return this.memoriaMB;
   }
 
   // * SETTERS
@@ -37,8 +38,8 @@ public class Smartphone extends Prodotto {
     this.IMEI = IMEIvalidator(nuovoIMEI);
   }
 
-  public void setMemoria(int nuovaMemoria) {
-    this.memoria = nuovaMemoria;
+  public void setMemoriaMB(int nuovaMemoriaMB) {
+    this.memoriaMB = nuovaMemoriaMB;
   }
 
   // * utility
@@ -46,7 +47,12 @@ public class Smartphone extends Prodotto {
   public String IMEIvalidator(String IMEI) {
     if (!IMEI.matches("\\d{15}")) {
       // IMEI is not 15 digits, generate a random 15-digit IMEI
-      return String.format("%015d", new Random().nextLong() & Long.MAX_VALUE);
+      StringBuilder randomIMEI = new StringBuilder();
+      Random rand = new Random();
+      for (int i = 0; i < 15; i++) {
+        randomIMEI.append(rand.nextInt(10));
+      }
+      return randomIMEI.toString();
     } else {
       return IMEI;
     }

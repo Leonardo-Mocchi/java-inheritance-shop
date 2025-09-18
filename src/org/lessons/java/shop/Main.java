@@ -46,6 +46,74 @@ public class Main {
     System.out.println();
     // </editor-fold>
 
+    // <editor-fold desc="Prodotto - Smartphone">
+    Smartphone bestPhoneEverMade = new Smartphone(
+      "3310",
+      "Nokia",
+      new BigDecimal(122.95),
+      "",
+      16
+    );
+
+    System.out.println(
+      "Il codice prodotto del prodotto " +
+      bestPhoneEverMade.getMarca() +
+      " " +
+      bestPhoneEverMade.getNome() +
+      " è: " +
+      bestPhoneEverMade.getCodice()
+    );
+
+    System.out.println(
+      "La marca del prodotto " +
+      bestPhoneEverMade.getNome() +
+      " è: " +
+      bestPhoneEverMade.getMarca()
+    );
+    System.out.println(
+      "Il prezzo (senza iva) del prodotto " +
+      bestPhoneEverMade.getMarca() +
+      " " +
+      bestPhoneEverMade.getNome() +
+      "  è: " +
+      bestPhoneEverMade.getPrezzo() +
+      "$"
+    );
+    System.out.println(
+      "Il prezzo pieno del prodotto " +
+      bestPhoneEverMade.getMarca() +
+      " " +
+      bestPhoneEverMade.getNome() +
+      " è: " +
+      bestPhoneEverMade.getPrezzoPieno() +
+      "$, di cui IVA " +
+      bestPhoneEverMade.getIva() +
+      "$"
+    );
+    bestPhoneEverMade.printNomeEsteso();
+
+    System.out.println(
+      "Il codice IMEI del prodotto " +
+      bestPhoneEverMade.getMarca() +
+      " " +
+      bestPhoneEverMade.getNome() +
+      " è: " +
+      bestPhoneEverMade.getIMEI()
+    );
+
+    System.out.println(
+      "La quantità di memoria interna del dispositivo " +
+      bestPhoneEverMade.getMarca() +
+      " " +
+      bestPhoneEverMade.getNome() +
+      " ammonta a " +
+      bestPhoneEverMade.getMemoriaMB() +
+      "MB"
+    );
+
+    System.out.println();
+    // </editor-fold>
+
     // <editor-fold desc="Prodotto - Televisore">
     Televisore biggestCRT = new Televisore(
       "PVM-4300",
@@ -60,6 +128,8 @@ public class Main {
 
     System.out.println(
       "Il codice prodotto del prodotto " +
+      biggestCRT.getMarca() +
+      " " +
       biggestCRT.getNome() +
       " è: " +
       biggestCRT.getCodice()
@@ -73,6 +143,8 @@ public class Main {
     );
     System.out.println(
       "Il prezzo (senza iva) del prodotto " +
+      biggestCRT.getMarca() +
+      " " +
       biggestCRT.getNome() +
       "  è: " +
       biggestCRT.getPrezzo() +
@@ -80,6 +152,8 @@ public class Main {
     );
     System.out.println(
       "Il prezzo pieno del prodotto " +
+      biggestCRT.getMarca() +
+      " " +
       biggestCRT.getNome() +
       " è: " +
       biggestCRT.getPrezzoPieno() +
@@ -103,7 +177,67 @@ public class Main {
     System.out.println(smartTvMessage);
 
     System.out.println();
-    // <editor-fold>
+    // </editor-fold>
 
+    // <editor-fold desc="Prodotto - Cuffie">
+    Cuffie cuffieGaming = new Cuffie(
+      "PRO X",
+      "Logitech",
+      new BigDecimal(118.85),
+      "Nero",
+      true
+    );
+
+    System.out.println(
+      "Il codice prodotto del prodotto " +
+      cuffieGaming.getMarca() +
+      " " +
+      cuffieGaming.getNome() +
+      " è: " +
+      cuffieGaming.getCodice()
+    );
+
+    System.out.println(
+      "La marca del prodotto " +
+      cuffieGaming.getNome() +
+      " è: " +
+      cuffieGaming.getMarca()
+    );
+    System.out.println(
+      "Il prezzo (senza iva) del prodotto " +
+      cuffieGaming.getNome() +
+      "  è: " +
+      cuffieGaming.getPrezzo() +
+      "$"
+    );
+    System.out.println(
+      "Il prezzo pieno del prodotto " +
+      cuffieGaming.getMarca() +
+      " " +
+      cuffieGaming.getNome() +
+      " è: " +
+      cuffieGaming.getPrezzoPieno() +
+      "$, di cui IVA " +
+      cuffieGaming.getIva() +
+      "$"
+    );
+    cuffieGaming.printNomeEsteso();
+
+    System.out.println(
+      "Il prodotto " +
+      cuffieGaming.getMarca() +
+      " " +
+      cuffieGaming.getNome() +
+      " è di colore " +
+      cuffieGaming.getColore()
+    );
+
+    String wirelessHeadphonesMessage = String.format(
+      "Le cuffie %s wireless",
+      cuffieGaming.getWireless() ? "sono" : "non sono"
+    );
+
+    System.out.println(wirelessHeadphonesMessage);
+    // </editor-fold>
   }
 }
