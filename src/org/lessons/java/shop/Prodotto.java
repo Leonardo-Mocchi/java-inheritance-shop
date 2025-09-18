@@ -1,6 +1,7 @@
 package org.lessons.java.shop;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
@@ -22,7 +23,7 @@ public class Prodotto {
     this.codice = assegnaNumeroProdotto();
     this.nome = nome;
     this.marca = marca.substring(0, 1).toUpperCase() + marca.substring(1);
-    this.prezzo = prezzo;
+    this.prezzo = prezzo.setScale(2, RoundingMode.HALF_UP);
     this.primaNecessita = primaNecessita;
     this.iva = calcolaIva();
   }
@@ -65,15 +66,15 @@ public class Prodotto {
   }
 
   public BigDecimal getPrezzo() {
-    return this.prezzo;
+    return this.prezzo.setScale(2, RoundingMode.HALF_UP);
   }
 
   public BigDecimal getIva() {
-    return this.iva;
+    return this.iva.setScale(2, RoundingMode.HALF_UP);
   }
 
   public BigDecimal getPrezzoPieno() {
-    return this.prezzo.add(this.iva);
+    return this.prezzo.add(this.iva).setScale(2, RoundingMode.HALF_UP);
   }
 
   public void printNomeEsteso() {
