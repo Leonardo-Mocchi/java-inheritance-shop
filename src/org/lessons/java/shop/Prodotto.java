@@ -82,7 +82,7 @@ public class Prodotto {
   @Override
   public String toString() {
     if (nome != null) {
-      return codice + " - " + nome;
+      return codice + " - " + marca + " " + nome;
     }
     return null;
   }
