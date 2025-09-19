@@ -57,4 +57,17 @@ public class Smartphone extends Prodotto {
       return IMEI;
     }
   }
+
+  //? aggiunto post correzione
+
+  @Override
+  public String toString() {
+    return (
+      super.toString() +
+      "\nCodice IMEI: " +
+      getIMEI() +
+      "\nMega: " +
+      getMemoriaMB()
+    );
+  }
 }

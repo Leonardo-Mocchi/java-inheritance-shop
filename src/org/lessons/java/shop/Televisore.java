@@ -9,7 +9,7 @@ public class Televisore extends Prodotto {
   private BigDecimal altezza;
   private BigDecimal profondità;
   private BigDecimal pollici;
-  private boolean isSmartTv;
+  private boolean isSmartTV;
 
   Televisore(
     String nome,
@@ -19,14 +19,14 @@ public class Televisore extends Prodotto {
     BigDecimal altezza,
     BigDecimal profondità,
     BigDecimal pollici,
-    boolean isSmartTv
+    boolean isSmartTV
   ) {
     super(nome, marca, prezzo, false);
     this.larghezza = larghezza.setScale(2, RoundingMode.HALF_UP);
     this.altezza = altezza.setScale(2, RoundingMode.HALF_UP);
     this.profondità = profondità.setScale(2, RoundingMode.HALF_UP);
     this.pollici = pollici.setScale(2, RoundingMode.HALF_UP);
-    this.isSmartTv = isSmartTv;
+    this.isSmartTV = isSmartTV;
   }
 
   // * GETTERS
@@ -56,8 +56,8 @@ public class Televisore extends Prodotto {
     return String.format("%s\"", pollici);
   }
 
-  public boolean getIsSmartTv() {
-    return this.isSmartTv;
+  public boolean getIsSmartTV() {
+    return this.isSmartTV;
   }
 
   // * SETTERS
@@ -76,5 +76,24 @@ public class Televisore extends Prodotto {
 
   public void setPollici(BigDecimal nuoviPollici) {
     this.pollici = nuoviPollici;
+  }
+
+  public void setIsSmartTV(boolean isSmartTV) {
+    this.isSmartTV = isSmartTV;
+  }
+
+  //? aggiunto post correzione
+
+  @Override
+  public String toString() {
+    return (
+      super.toString() +
+      "\nDimensioni: " +
+      getDimensioni() +
+      "\nPollici: " +
+      getPollici() +
+      "\nSmart: " +
+      (getIsSmartTV() ? "sì" : "no")
+    );
   }
 }

@@ -77,6 +77,17 @@ public class Prodotto {
     return this.prezzo.add(this.iva).setScale(2, RoundingMode.HALF_UP);
   }
 
+  //? post correzione rimpiazza printNomeEsteso
+
+  @Override
+  public String toString() {
+    if (nome != null) {
+      return codice + " - " + nome;
+    }
+    return null;
+  }
+
+  //! prima della correzione
   public void printNomeEsteso() {
     System.out.println(
       "Il nome esteso dell'articolo è: " +

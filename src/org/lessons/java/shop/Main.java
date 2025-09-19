@@ -44,6 +44,12 @@ public class Main {
     Doritos.printNomeEsteso();
 
     System.out.println();
+
+    System.out.println("Invece qui con l'approccio toString:");
+    System.out.println(Doritos.toString());
+
+    System.out.println();
+
     // </editor-fold>
 
     // <editor-fold desc="Prodotto - Smartphone">
@@ -112,6 +118,11 @@ public class Main {
     );
 
     System.out.println();
+
+    System.out.println("Invece qui con l'approccio toString:");
+    System.out.println(bestPhoneEverMade.toString());
+
+    System.out.println();
     // </editor-fold>
 
     // <editor-fold desc="Prodotto - Televisore">
@@ -170,11 +181,16 @@ public class Main {
       biggestCRT.getPollici()
     );
 
-    String smartTvMessage = String.format(
+    String smartTVMessage = String.format(
       "La televisione %s smart",
-      biggestCRT.getIsSmartTv() ? "è" : "non è"
+      biggestCRT.getIsSmartTV() ? "è" : "non è"
     );
-    System.out.println(smartTvMessage);
+    System.out.println(smartTVMessage);
+
+    System.out.println();
+
+    System.out.println("Invece qui con l'approccio toString:");
+    System.out.println(biggestCRT.toString());
 
     System.out.println();
     // </editor-fold>
@@ -234,10 +250,15 @@ public class Main {
 
     String wirelessHeadphonesMessage = String.format(
       "Le cuffie %s wireless",
-      cuffieGaming.getWireless() ? "sono" : "non sono"
+      cuffieGaming.getIsWireless() ? "sono" : "non sono"
     );
 
     System.out.println(wirelessHeadphonesMessage);
+
+    System.out.println();
+
+    System.out.println("Invece qui con l'approccio toString:");
+    System.out.println(cuffieGaming.toString());
     // </editor-fold>
   }
 }
